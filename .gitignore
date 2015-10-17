@@ -1,0 +1,30 @@
+//Створіть масив з 12 випадкових цілих чисел з відрізка [-15; 15]. Визначте який
+//елемент є в цьому масиві максимальним і повідомте індекс його останнього
+//входження в масив.
+
+public class Exercise8 {
+
+	public static void main(String[] args) {
+		int arrayA[] = new int[12];
+
+		int min = -15; // мінімальне значення масиву
+		int max = 16; // максимальне значення масиву +1
+
+		int maxValue = 0;
+		int maxValueIndex = 0;
+
+		for (int x = 0; x < arrayA.length; x++) {
+			arrayA[x] = (int) Math.floor(Math.random() * (max - min) + min);
+			System.out.print(arrayA[x] + "; ");
+			if (x == 0) {
+				maxValue = arrayA[x];
+				maxValueIndex = x;
+			} else if (x > 0 & maxValue < arrayA[x]) {
+				maxValue = arrayA[x];
+				maxValueIndex = x;
+			}
+		}
+		System.out.println("\nМаксимальне значення масиву: " + maxValue + ";"
+				+ "\nІндекс максимального значення масиву: " + maxValueIndex + ";");
+	}
+}
